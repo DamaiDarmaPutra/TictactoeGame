@@ -1,0 +1,63 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Tombol extends TicTacToe {
+
+	JPanel tombol_panel = new JPanel();
+	JLabel textfield = new JLabel();
+	JButton[] tombol = new JButton[9];
+	boolean giliran_player1;
+	private Container frame;
+	
+	
+	
+	Tombol() {
+		tombol_panel.setLayout(new GridLayout(3,3));
+		tombol_panel.setForeground(new Color(255, 255, 255));
+		
+		
+		for(int i=0;i<9;i++) {
+			tombol[i] = new JButton();
+			tombol_panel.add(tombol[i]);
+			tombol[i].setFont(new Font("MV Boli", Font.BOLD,120));
+			tombol[i].setFocusable(false);
+			tombol[i].addActionListener(this);
+	}
+		frame.add(tombol_panel);
+}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		for(int i=0;i<9;i++) {
+			if(e.getSource()==tombol[i]) {
+				if(giliran_player1) {
+				if(tombol[i].getText()=="") {
+					tombol[i].setForeground(new Color(255,0,0));
+					tombol[i].setText("X");
+					giliran_player1=false;
+					textfield.setText("Giliran O");
+
+				}
+			} else {
+					if(tombol[i].getText()=="") {
+						tombol[i].setForeground(new Color(0,0,255));
+						tombol[i].setText("O");
+						giliran_player1=true;
+						textfield.setText("Giliran X");
+
+					}
+				}
+			}
+		}		
+	}
+}

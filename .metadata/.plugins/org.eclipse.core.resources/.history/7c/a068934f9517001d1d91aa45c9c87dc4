@@ -1,0 +1,9 @@
+
+public class Main extends KondisiMenang {
+
+	public static void main(String[] args) {
+
+		TicTacToe tictactoe = new TicTacToe();
+		KondisiMenang kondisimenang = new KondisiMenang();
+	}
+}

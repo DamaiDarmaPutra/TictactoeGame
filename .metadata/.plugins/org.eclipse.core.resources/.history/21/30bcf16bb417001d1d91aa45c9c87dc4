@@ -1,0 +1,51 @@
+package TicTacToe;
+
+import java.util.Scanner;
+
+class TicTacToe {
+Papan map = new Papan();
+private Penuh penuh = new Penuh();
+GantiPemain gantipemain = new GantiPemain();
+Pemenang pemenang = new Pemenang();
+Scanner input = new Scanner(System.in);
+char[][] papan = Papan.board;
+Terisi terisi = new Terisi();
+private int row, col;
+
+
+void StartGame() {
+
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            papan[i][j] = '_';
+        }
+    }
+
+
+    map.Papan();
+    while (pemenang.Pemenang()) {
+
+        row = input.nextInt();
+        col = input.nextInt();
+        if (row > 3 || col > 3) {
+            System.out.println("You've inputed place, which is out of the board!\nTry again!");
+
+        } else {
+            if (Terisi.isFull(row, col)) {
+                System.err.println("The place is taken");
+
+            } else {
+                papan[row - 1][col - 1] = GantiPemain.getTurn();
+                map.printBoard();
+                GantiPemain.whichPlayer();
+            }
+
+        }
+
+
+    }
+    GantiPemain.whichPlayer();
+    System.out.println("the winner is " + GantiPemain.getTurn());
+}
+}

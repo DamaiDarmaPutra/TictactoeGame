@@ -1,0 +1,20 @@
+package TicTacToe;
+
+public class GantiPemain {
+
+	public char giliran = 'X';
+
+	public void pilihPemain() {
+	    if (giliran == 'X') {
+	        giliran = 'O';
+	    } else {
+	        giliran = 'X';
+
+	    }
+	}
+
+	public char getGiliran() {
+	    return giliran;
+	}
+	
+}

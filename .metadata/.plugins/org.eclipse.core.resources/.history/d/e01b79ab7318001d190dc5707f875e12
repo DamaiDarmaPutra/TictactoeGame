@@ -1,0 +1,151 @@
+package TicTacToe;
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
+public class Cek {
+	JButton[] tombol = new JButton[9];
+	JLabel textfield = new JLabel();
+	
+public void cek() {
+		// X Menang
+		if(
+				(tombol[0].getText()=="X")&&
+				(tombol[1].getText()=="X")&&
+				(tombol[2].getText()=="X") 
+				){
+					Xmenang(0,1,2);
+				}
+		if(
+				(tombol[3].getText()=="X")&&
+				(tombol[4].getText()=="X")&&
+				(tombol[5].getText()=="X") 
+				){
+					Xmenang(3,4,5);
+				}
+		if(
+				(tombol[6].getText()=="X")&&
+				(tombol[7].getText()=="X")&&
+				(tombol[8].getText()=="X") 
+				){
+					Xmenang(6,7,8);
+				}
+		if(
+				(tombol[0].getText()=="X")&&
+				(tombol[3].getText()=="X")&&
+				(tombol[6].getText()=="X") 
+				){
+					Xmenang(0,3,6);
+				}
+		if(
+				(tombol[1].getText()=="X")&&
+				(tombol[4].getText()=="X")&&
+				(tombol[7].getText()=="X") 
+				){
+					Xmenang(1,4,7);
+				}
+		if(
+				(tombol[2].getText()=="X")&&
+				(tombol[5].getText()=="X")&&
+				(tombol[8].getText()=="X") 
+				){
+					Xmenang(2,5,8);
+				}
+		if(
+				(tombol[0].getText()=="X")&&
+				(tombol[4].getText()=="X")&&
+				(tombol[8].getText()=="X") 
+				){
+					Xmenang(0,4,8);
+				}
+		if(
+				(tombol[2].getText()=="X")&&
+				(tombol[4].getText()=="X")&&
+				(tombol[6].getText()=="X") 
+				){
+					Xmenang(2,4,6);
+				}
+		// O Menang
+		
+		if(
+				(tombol[0].getText()=="O")&&
+				(tombol[1].getText()=="O")&&
+				(tombol[2].getText()=="O") 
+				){
+					Omenang(0,1,2);
+				}
+		if(
+				(tombol[3].getText()=="O")&&
+				(tombol[4].getText()=="O")&&
+				(tombol[5].getText()=="O") 
+				){
+					Omenang(3,4,5);
+				}
+		if(
+				(tombol[6].getText()=="O")&&
+				(tombol[7].getText()=="O")&&
+				(tombol[8].getText()=="O") 
+				){
+					Omenang(6,7,8);
+				}
+		if(
+				(tombol[0].getText()=="O")&&
+				(tombol[3].getText()=="O")&&
+				(tombol[6].getText()=="O") 
+				){
+					Omenang(0,3,6);
+				}
+		if(
+				(tombol[1].getText()=="O")&&
+				(tombol[4].getText()=="O")&&
+				(tombol[7].getText()=="O") 
+				){
+					Omenang(1,4,7);
+				}
+		if(
+				(tombol[2].getText()=="O")&&
+				(tombol[5].getText()=="O")&&
+				(tombol[8].getText()=="O") 
+				){
+					Omenang(2,5,8);
+				}
+		if(
+				(tombol[0].getText()=="O")&&
+				(tombol[4].getText()=="O")&&
+				(tombol[8].getText()=="O") 
+				){
+					Omenang(0,4,8);
+				}
+		if(
+				(tombol[2].getText()=="O")&&
+				(tombol[4].getText()=="O")&&
+				(tombol[6].getText()=="O") 
+				){
+					Omenang(2,4,6);
+			}	
+	}
+	public void Xmenang(int a, int b, int c) {
+	
+	tombol[a].setBackground(Color.BLUE);
+	tombol[b].setBackground(Color.BLUE);
+	tombol[c].setBackground(Color.BLUE);
+
+	for(int i=0;i<9;i++) {
+		tombol[i].setEnabled(false);
+	}
+		textfield.setText("X MENANG");
+}
+	public void Omenang(int a, int b, int c) {
+	
+	tombol[a].setBackground(Color.BLUE);
+	tombol[b].setBackground(Color.BLUE);
+	tombol[c].setBackground(Color.BLUE);
+
+	for(int i=0;i<9;i++) {
+		tombol[i].setEnabled(false);
+		}
+		textfield.setText("O MENANG");
+	}
+}

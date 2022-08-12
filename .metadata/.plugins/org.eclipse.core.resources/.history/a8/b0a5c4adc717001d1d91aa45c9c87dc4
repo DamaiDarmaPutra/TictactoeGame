@@ -1,0 +1,16 @@
+package TicTacToe;
+
+public class Penuh {
+
+	char[][] papan = Papan.papan;
+
+	public boolean isFull(int row, int col) {
+	    if (papan[row - 1][col - 1] == 'X' ||
+	        papan[row - 1][col - 1] == 'O') {
+	        return true;
+	    }
+	    return false;
+	}
+
+	
+}
